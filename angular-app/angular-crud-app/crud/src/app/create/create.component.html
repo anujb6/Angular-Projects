@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h1 class="heading">Insert a user</h1>
+  <form [formGroup]="userForm">
+    <div class="col-lg-2 mt-2">
+      <input
+        type="text"
+        formControlName="name"
+        class="form-control"
+        placeholder="insert name"
+        id=""
+      />
+    </div>
+    <div class="col-lg-2 mt-2">
+      <input
+        type="text"
+        formControlName="email"
+        class="form-control"
+        placeholder="insert email"
+        id=""
+      />
+    </div>
+    <div class="col-lg-2 mt-2" *ngIf="!getparamid" (click)="userSubmit()">
+      <button class="btn btn-primary btn-large">Add user</button>
+    </div>
+    <div class="col-lg-2 mt-2" *ngIf="getparamid" (click)="userUpdate()">
+      <button class="btn btn-primary btn-large">Update user</button>
+    </div>
+  </form>
+</div>

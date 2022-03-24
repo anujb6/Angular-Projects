@@ -1,0 +1,28 @@
+<div class="container" style="text-align: center;">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">email</th>
+        <th scope="col">delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of readData">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <button class="btn btn-dark" (click)="deleteID(user.id)">
+            delete
+          </button>
+          &nbsp;
+          <a [routerLink]="['/create', user.id]" class="btn btn-info">
+            Update
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
